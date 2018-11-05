@@ -318,7 +318,8 @@ $HTML = @"
                 if (parseresult != "PowerShell is busy.") {
                     // - Fill VCSA information
                     var dashboardvalues = parseresult.split("/");
-                    `$('#nDatacenters').html(dashboardvalues[0]);
+                    `$('#nDebug').text(parseresult);
+                    `$('#nDatacenters').html(dashboardvalues[0]);                    
                     `$('#nClusters').html(dashboardvalues[1]);
                     `$('#nHosts').html(dashboardvalues[2]);
                     `$('#nVMs').html(dashboardvalues[3]);
@@ -635,6 +636,19 @@ $HTML = @"
                                         <li>Number of Hosts: 25</li>
                                         <li>Number of VMs: 368</li>
                                         <li>Number of Templates: 53</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                                <div class="card">
+                                    <div class="card-block">
+                                        <h5 class="card-title"><b>Debug Information</b></h5>
+                                        <p class="p7">
+                                        <i>This is the debug string.</i>
+                                        </p>
+                                    </div>
+                                    <ul class="list">
+                                        <li>Datacenters: <span id="nDebug"><i>$($MsgTbl.Retrieving)</i></span></li>
                                     </ul>
                                 </div>
                             </div>
